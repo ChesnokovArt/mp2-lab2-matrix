@@ -242,6 +242,10 @@ TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s)
 {
 	if (s > MAX_MATRIX_SIZE) throw Invalid_Index;
 	Size = s;
+	for (int i = 0; i < Size; i++)
+	{
+		pVector[i] = TVector<ValType>(s);
+	}
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // конструктор копирования
